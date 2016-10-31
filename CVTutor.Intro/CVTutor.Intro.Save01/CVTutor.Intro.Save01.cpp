@@ -13,14 +13,11 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-	if (argc != 2)
+	string imageName("../../sample-data/HappyFish.jpg"); // by default
+	if (argc > 1)
 	{
-		cout << " Usage: requires image arg." << endl;
-		system("pause");
-		return -1;
+		imageName = argv[1];
 	}
-
-	char* imageName = argv[1];
 
 	Mat image;
 	image = imread(imageName, 1);
