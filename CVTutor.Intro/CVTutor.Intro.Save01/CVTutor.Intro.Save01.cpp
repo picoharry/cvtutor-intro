@@ -1,48 +1,62 @@
 // CVTutor.Intro.Save01.cpp : Defines the entry point for the console application.
 //
 
+// Tutorial
+// http://docs.opencv.org/3.1.0/db/d64/tutorial_load_save_image.html
+
 #include "stdafx.h"
-#include <opencv2/opencv.hpp>
+#include <opencv2/imgproc.hpp>
 
 using namespace cv;
 using namespace std;
 
+// Global contstants
+const string WINDOW_ORIGINAL_IMAGE = "Original image window";
+const string WINDOW_GRAY_IMAGE = "Gray image window";
 
-// Tutorial
-// http://docs.opencv.org/3.1.0/db/d64/tutorial_load_save_image.html
 
-int main(int argc, char** argv)
+int main(int argc, const char* argv[])
 {
-	string imageName("../../sample-data/HappyFish.jpg"); // by default
-	if (argc > 1)
-	{
-		imageName = argv[1];
-	}
+    // Default file name
+    string imageName("../../sample-data/HappyFish.jpg");
+    if (argc > 1)
+    {
+        imageName = argv[1];
+    }
 
-	Mat image;
-	image = imread(imageName, 1);
-	if (!image.data)
-	{
-		cout << " No image data." << endl;
-		system("pause");
-		return -1;
-	}
+    // Load the image.
+    Mat image = imread(imageName, -1);
+    if (image.empty())
+    {
+        cout << "Could not open or find the image" << endl;
+        system("pause");
+        return -1;
+    }
 
-	Mat gray_image;
-	cvtColor(image, gray_image, COLOR_BGR2GRAY);
+    // Create GUI Windows.
+    namedWindow(WINDOW_ORIGINAL_IMAGE, WINDOW_AUTOSIZE);
+    namedWindow(WINDOW_GRAY_IMAGE, WINDOW_AUTOSIZE);
 
-	// Need to create a folder "saved-images" first.
-	cout << " Writing the gray image..." << endl;
-	// imwrite("Gray_Image.jpg", gray_image);
-	bool suc = imwrite("../../saved-images/Gray_Image.jpg", gray_image);
-	cout << " >> Image saved. suc = " + suc << endl;  // ????
+    // Get a UMat
+    UMat uImg = image.getUMat(ACCESS_READ);
 
-	namedWindow(imageName, WINDOW_AUTOSIZE);
-	namedWindow("Gray image", WINDOW_AUTOSIZE);
+    // Display the original image.
+    imshow(WINDOW_ORIGINAL_IMAGE, uImg);
 
-	imshow(imageName, image);
-	imshow("Gray image", gray_image);
+    // Convert it into gray.
+    UMat uGray;
+    cvtColor(uImg, uGray, COLOR_BGR2GRAY);
 
-	waitKey(0);
-	return 0;
+    // Display the converted gray image.
+    imshow(WINDOW_GRAY_IMAGE, uGray);
+
+    // Save the gray image.
+    // Note: Need to create a folder named "saved-images" first (as a sibling to sample-data).
+    cout << " Writing the gray image..." << endl;
+    bool suc = imwrite("../../saved-images/Gray_Image.jpg", uGray);
+    cout << " >> Image saved. suc = " << suc << endl;  // ????
+
+    // Wait for a keystroke in the window
+    waitKey(0);
+    return 0;
 }

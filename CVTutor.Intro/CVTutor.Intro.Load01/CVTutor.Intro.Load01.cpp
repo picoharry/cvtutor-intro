@@ -1,39 +1,46 @@
 // CVTutor.Intro.Load01.cpp : Defines the entry point for the console application.
 //
 
+// Tutorial:
+// http://docs.opencv.org/3.1.0/db/deb/tutorial_display_image.html
+
 #include "stdafx.h"
-#include <opencv2/imgcodecs.hpp>
 
 using namespace cv;
 using namespace std;
 
+// Global contstants
+const string WINDOW_NAME = "Display window";
 
-// Tutorial:
-// http://docs.opencv.org/3.1.0/db/deb/tutorial_display_image.html
 
-int main(int argc, char** argv)
+int main(int argc, const char* argv[])
 {
-	string imageName("../../sample-data/HappyFish.jpg"); // by default
-	if (argc > 1)
-	{
-		imageName = argv[1];
-	}
+    // Default file name
+    string imageName("../../sample-data/HappyFish.jpg");
+    if (argc > 1)
+    {
+        imageName = argv[1];
+    }
 
-	Mat image;
+    // Load the image.
+    Mat image = imread(imageName, IMREAD_COLOR);
+    if (image.empty())
+    {
+        cout << "Could not open or find the image" << endl;
+        system("pause");
+        return -1;
+    }
 
-	image = imread(imageName.c_str(), IMREAD_COLOR); // Read the file
+    // Convert it into a UMat
+    UMat uImg = image.getUMat(ACCESS_READ);
 
-	if (image.empty())                      // Check for invalid input
-	{
-		cout << "Could not open or find the image" << std::endl;
-		system("pause");
-		return -1;
-	}
+    // Create a window for display.
+    namedWindow(WINDOW_NAME, WINDOW_AUTOSIZE);
 
-	namedWindow("Display window", WINDOW_AUTOSIZE); // Create a window for display.
+    // Show the image inside it.
+    imshow(WINDOW_NAME, uImg);
 
-	imshow("Display window", image);                // Show our image inside it.
-
-	waitKey(0); // Wait for a keystroke in the window
-	return 0;
+    // Wait for a keystroke in the window
+    waitKey(0);
+    return 0;
 }
