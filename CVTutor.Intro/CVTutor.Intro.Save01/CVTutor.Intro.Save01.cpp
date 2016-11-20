@@ -5,7 +5,6 @@
 // http://docs.opencv.org/3.1.0/db/d64/tutorial_load_save_image.html
 
 #include "stdafx.h"
-#include <opencv2/imgproc.hpp>
 
 using namespace cv;
 using namespace std;
