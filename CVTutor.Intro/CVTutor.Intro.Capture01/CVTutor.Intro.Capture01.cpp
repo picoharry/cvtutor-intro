@@ -2,7 +2,7 @@
 //
 
 // Reference:
-// http://docs.opencv.org/3.1.0/d7/dfc/group__highgui.html
+// http://docs.opencv.org/master/d8/dfe/classcv_1_1VideoCapture.html
 
 #include "stdafx.h"
 
@@ -10,11 +10,12 @@ using namespace cv;
 using namespace std;
 
 
-// Global contstants
+// Global constants
 // const string CAMERA_FEED = "Camera";  // trck, for convenience.
 const string WINDOW_NAME = "Display window";
 
 
+// Usage: CVTutor.Intro.Capture01 <video filename>
 int main(int argc, const char* argv[])
 {
     // Whether to use a live video feed or a vldeo file.

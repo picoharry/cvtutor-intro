@@ -9,11 +9,12 @@
 using namespace cv;
 using namespace std;
 
-// Global contstants
+// Global constants
 const string WINDOW_ORIGINAL_IMAGE = "Original image window";
 const string WINDOW_GRAY_IMAGE = "Gray image window";
 
 
+// Usage: CVTutor.Intro.Save01 <image filename>
 int main(int argc, const char* argv[])
 {
     // Default file name

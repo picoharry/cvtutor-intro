@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CVTutor.Intro.Save01", "CVT
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CVTutor.Intro.Capture01", "CVTutor.Intro.Capture01\CVTutor.Intro.Capture01.vcxproj", "{23DF5DDD-1AB3-4651-BC04-EA5299E21373}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CVTutor.Intro.Hello01", "CVTutor.Intro.Hello01\CVTutor.Intro.Hello01.vcxproj", "{D7F09D80-BBF3-4B88-A63A-085C7570DB98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{23DF5DDD-1AB3-4651-BC04-EA5299E21373}.Release|x64.Build.0 = Release|x64
 		{23DF5DDD-1AB3-4651-BC04-EA5299E21373}.Release|x86.ActiveCfg = Release|Win32
 		{23DF5DDD-1AB3-4651-BC04-EA5299E21373}.Release|x86.Build.0 = Release|Win32
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Debug|x64.ActiveCfg = Debug|x64
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Debug|x64.Build.0 = Debug|x64
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Debug|x86.ActiveCfg = Debug|Win32
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Debug|x86.Build.0 = Debug|Win32
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Release|x64.ActiveCfg = Release|x64
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Release|x64.Build.0 = Release|x64
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Release|x86.ActiveCfg = Release|Win32
+		{D7F09D80-BBF3-4B88-A63A-085C7570DB98}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

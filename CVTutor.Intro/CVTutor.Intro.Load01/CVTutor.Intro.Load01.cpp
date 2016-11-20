@@ -9,10 +9,11 @@
 using namespace cv;
 using namespace std;
 
-// Global contstants
+// Global constants
 const string WINDOW_NAME = "Display window";
 
 
+// Usage: CVTutor.Intro.Load01 <image filename>
 int main(int argc, const char* argv[])
 {
     // Default file name
