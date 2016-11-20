@@ -1,3 +1,4 @@
+
 # 0. Intro
 Tutorials from "Introduction to OpenCV"
 
@@ -12,6 +13,7 @@ Tutorials from "Introduction to OpenCV"
 
 * _Hello OpenCV!_
 
+Usage:    
     `CVTutor.Intro.Hello01`
 
 
@@ -19,6 +21,7 @@ Tutorials from "Introduction to OpenCV"
 
 * [Load and Display an Image](http://docs.opencv.org/3.1.0/db/deb/tutorial_display_image.html)
 
+Usage:    
     `CVTutor.Intro.Load01 <image filename>`
 
 
@@ -26,6 +29,7 @@ Tutorials from "Introduction to OpenCV"
 
 * [Load, Modify, and Save an Image](http://docs.opencv.org/3.1.0/db/d64/tutorial_load_save_image.html)
 
+Usage:    
    `CVTutor.Intro.Save01 <image filename>`
 
 
@@ -33,5 +37,6 @@ Tutorials from "Introduction to OpenCV"
 
 * [cv::VideoCapture Class Reference](http://docs.opencv.org/master/d8/dfe/classcv_1_1VideoCapture.html)
 
+Usage:    
     `CVTutor.Intro.Capture01 <video filename>`
 
